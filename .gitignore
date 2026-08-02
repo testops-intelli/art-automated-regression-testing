@@ -1,0 +1,8 @@
+# real credentials live here — .env.example is the committed template
+.env
+
+# ART run artifacts
+outputs/
+
+__pycache__/
+*.pyc
