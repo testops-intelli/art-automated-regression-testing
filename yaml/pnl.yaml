@@ -1,0 +1,19 @@
+type: sql_function
+target: public.pnl
+primary_key:
+- entity_id
+- security_id
+params:
+  p_entity_id:
+    kind: business_key
+    optional: false
+    data_type: integer
+  p_start_date:
+    kind: business_key
+    optional: false
+    data_type: date
+  p_end_date:
+    kind: business_key
+    optional: false
+    data_type: date
+candidates_table: art.candidates_pnl

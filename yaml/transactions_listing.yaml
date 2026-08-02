@@ -1,0 +1,39 @@
+type: sql_function
+target: public.transactions_listing
+primary_key:
+- transaction_id
+params:
+  p_fund_id:
+    kind: business_key
+    optional: true
+    pairs_with: p_group_id
+    data_type: integer
+  p_group_id:
+    kind: business_key
+    optional: true
+    pairs_with: p_fund_id
+    data_type: integer
+  p_start_date:
+    kind: business_key
+    optional: false
+    data_type: date
+  p_end_date:
+    kind: business_key
+    optional: false
+    data_type: date
+  p_settled:
+    kind: enum
+    infer: false
+    values:
+    - Y
+    - N
+    data_type: character
+  p_active_flag:
+    kind: enum
+    infer: false
+    values:
+    - '0'
+    - '1'
+    - 'NULL'
+    data_type: integer
+candidates_table: art.candidates_transactions_listing

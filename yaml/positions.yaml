@@ -1,0 +1,38 @@
+type: sql_function
+target: public.positions
+primary_key:
+- entity_id
+- security_id
+- transaction_id
+params:
+  p_entity_id:
+    kind: business_key
+    optional: true
+    pairs_with: p_group_id
+    data_type: integer
+  p_group_id:
+    kind: business_key
+    optional: true
+    pairs_with: p_entity_id
+    data_type: integer
+  p_settled:
+    kind: enum
+    infer: true
+    values:
+    - Y
+    - N
+    data_type: art_yn
+  p_as_of_date:
+    kind: business_key
+    optional: false
+    data_type: date
+  p_lots:
+    kind: enum
+    infer: true
+    values:
+    - Y
+    - N
+    data_type: art_yn
+pk_nullable:
+- transaction_id
+candidates_table: art.candidates_positions
