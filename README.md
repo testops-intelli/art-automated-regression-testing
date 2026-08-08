@@ -92,9 +92,20 @@ Exit code: `0` clean, `1` diffs found, `2` setup error — CI-friendly.
 
 Prereqs: Python 3.10+, a PostgreSQL server you can create databases on.
 
-```
+**0. Clone the repo:**
+
+​```bash
+git clone https://github.com/testops-intelli/art-automated-regression-testing.git
+cd art-automated-regression-testing
+​```
+​```powershell
+git clone https://github.com/testops-intelli/art-automated-regression-testing.git
+Set-Location art-automated-regression-testing
+​```
+
+​```
 pip install -r requirements.txt
-```
+​```
 
 Then create your `.env` from the template and fill in `DB_USER` / `DB_PASSWORD`:
 
